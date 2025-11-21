@@ -1,0 +1,486 @@
+[
+  {
+    "name": "Knight",
+    "image": "images/Knight.png"
+  },
+  {
+    "name": "Archers",
+    "image": "images/Archers.png"
+  },
+  {
+    "name": "Goblins",
+    "image": "images/Goblins.png"
+  },
+  {
+    "name": "Giant",
+    "image": "images/Giant.png"
+  },
+  {
+    "name": "P.E.K.K.A",
+    "image": "images/P.E.K.K.A.png"
+  },
+  {
+    "name": "Minions",
+    "image": "images/Minions.png"
+  },
+  {
+    "name": "Balloon",
+    "image": "images/Balloon.png"
+  },
+  {
+    "name": "Witch",
+    "image": "images/Witch.png"
+  },
+  {
+    "name": "Barbarians",
+    "image": "images/Barbarians.png"
+  },
+  {
+    "name": "Golem",
+    "image": "images/Golem.png"
+  },
+  {
+    "name": "Skeletons",
+    "image": "images/Skeletons.png"
+  },
+  {
+    "name": "Valkyrie",
+    "image": "images/Valkyrie.png"
+  },
+  {
+    "name": "Skeleton Army",
+    "image": "images/Skeleton_Army.png"
+  },
+  {
+    "name": "Bomber",
+    "image": "images/Bomber.png"
+  },
+  {
+    "name": "Musketeer",
+    "image": "images/Musketeer.png"
+  },
+  {
+    "name": "Baby Dragon",
+    "image": "images/Baby_Dragon.png"
+  },
+  {
+    "name": "Prince",
+    "image": "images/Prince.png"
+  },
+  {
+    "name": "Wizard",
+    "image": "images/Wizard.png"
+  },
+  {
+    "name": "Mini P.E.K.K.A",
+    "image": "images/Mini_P.E.K.K.A.png"
+  },
+  {
+    "name": "Spear Goblins",
+    "image": "images/Spear_Goblins.png"
+  },
+  {
+    "name": "Giant Skeleton",
+    "image": "images/Giant_Skeleton.png"
+  },
+  {
+    "name": "Hog Rider",
+    "image": "images/Hog_Rider.png"
+  },
+  {
+    "name": "Minion Horde",
+    "image": "images/Minion_Horde.png"
+  },
+  {
+    "name": "Ice Wizard",
+    "image": "images/Ice_Wizard.png"
+  },
+  {
+    "name": "Royal Giant",
+    "image": "images/Royal_Giant.png"
+  },
+  {
+    "name": "Guards",
+    "image": "images/Guards.png"
+  },
+  {
+    "name": "Princess",
+    "image": "images/Princess.png"
+  },
+  {
+    "name": "Dark Prince",
+    "image": "images/Dark_Prince.png"
+  },
+  {
+    "name": "Three Musketeers",
+    "image": "images/Three_Musketeers.png"
+  },
+  {
+    "name": "Lava Hound",
+    "image": "images/Lava_Hound.png"
+  },
+  {
+    "name": "Ice Spirit",
+    "image": "images/Ice_Spirit.png"
+  },
+  {
+    "name": "Fire Spirit",
+    "image": "images/Fire_Spirit.png"
+  },
+  {
+    "name": "Miner",
+    "image": "images/Miner.png"
+  },
+  {
+    "name": "Sparky",
+    "image": "images/Sparky.png"
+  },
+  {
+    "name": "Bowler",
+    "image": "images/Bowler.png"
+  },
+  {
+    "name": "Lumberjack",
+    "image": "images/Lumberjack.png"
+  },
+  {
+    "name": "Battle Ram",
+    "image": "images/Battle_Ram.png"
+  },
+  {
+    "name": "Inferno Dragon",
+    "image": "images/Inferno_Dragon.png"
+  },
+  {
+    "name": "Ice Golem",
+    "image": "images/Ice_Golem.png"
+  },
+  {
+    "name": "Mega Minion",
+    "image": "images/Mega_Minion.png"
+  },
+  {
+    "name": "Dart Goblin",
+    "image": "images/Dart_Goblin.png"
+  },
+  {
+    "name": "Goblin Gang",
+    "image": "images/Goblin_Gang.png"
+  },
+  {
+    "name": "Electro Wizard",
+    "image": "images/Electro_Wizard.png"
+  },
+  {
+    "name": "Elite Barbarians",
+    "image": "images/Elite_Barbarians.png"
+  },
+  {
+    "name": "Hunter",
+    "image": "images/Hunter.png"
+  },
+  {
+    "name": "Executioner",
+    "image": "images/Executioner.png"
+  },
+  {
+    "name": "Bandit",
+    "image": "images/Bandit.png"
+  },
+  {
+    "name": "Royal Recruits",
+    "image": "images/Royal_Recruits.png"
+  },
+  {
+    "name": "Night Witch",
+    "image": "images/Night_Witch.png"
+  },
+  {
+    "name": "Bats",
+    "image": "images/Bats.png"
+  },
+  {
+    "name": "Royal Ghost",
+    "image": "images/Royal_Ghost.png"
+  },
+  {
+    "name": "Ram Rider",
+    "image": "images/Ram_Rider.png"
+  },
+  {
+    "name": "Zappies",
+    "image": "images/Zappies.png"
+  },
+  {
+    "name": "Rascals",
+    "image": "images/Rascals.png"
+  },
+  {
+    "name": "Cannon Cart",
+    "image": "images/Cannon_Cart.png"
+  },
+  {
+    "name": "Mega Knight",
+    "image": "images/Mega_Knight.png"
+  },
+  {
+    "name": "Skeleton Barrel",
+    "image": "images/Skeleton_Barrel.png"
+  },
+  {
+    "name": "Flying Machine",
+    "image": "images/Flying_Machine.png"
+  },
+  {
+    "name": "Wall Breakers",
+    "image": "images/Wall_Breakers.png"
+  },
+  {
+    "name": "Royal Hogs",
+    "image": "images/Royal_Hogs.png"
+  },
+  {
+    "name": "Goblin Giant",
+    "image": "images/Goblin_Giant.png"
+  },
+  {
+    "name": "Fisherman",
+    "image": "images/Fisherman.png"
+  },
+  {
+    "name": "Magic Archer",
+    "image": "images/Magic_Archer.png"
+  },
+  {
+    "name": "Electro Dragon",
+    "image": "images/Electro_Dragon.png"
+  },
+  {
+    "name": "Firecracker",
+    "image": "images/Firecracker.png"
+  },
+  {
+    "name": "Mighty Miner",
+    "image": "images/Mighty_Miner.png"
+  },
+  {
+    "name": "Elixir Golem",
+    "image": "images/Elixir_Golem.png"
+  },
+  {
+    "name": "Battle Healer",
+    "image": "images/Battle_Healer.png"
+  },
+  {
+    "name": "Skeleton King",
+    "image": "images/Skeleton_King.png"
+  },
+  {
+    "name": "Archer Queen",
+    "image": "images/Archer_Queen.png"
+  },
+  {
+    "name": "Golden Knight",
+    "image": "images/Golden_Knight.png"
+  },
+  {
+    "name": "Monk",
+    "image": "images/Monk.png"
+  },
+  {
+    "name": "Skeleton Dragons",
+    "image": "images/Skeleton_Dragons.png"
+  },
+  {
+    "name": "Mother Witch",
+    "image": "images/Mother_Witch.png"
+  },
+  {
+    "name": "Electro Spirit",
+    "image": "images/Electro_Spirit.png"
+  },
+  {
+    "name": "Electro Giant",
+    "image": "images/Electro_Giant.png"
+  },
+  {
+    "name": "Phoenix",
+    "image": "images/Phoenix.png"
+  },
+  {
+    "name": "Little Prince",
+    "image": "images/Little_Prince.png"
+  },
+  {
+    "name": "Goblin Demolisher",
+    "image": "images/Goblin_Demolisher.png"
+  },
+  {
+    "name": "Goblin Machine",
+    "image": "images/Goblin_Machine.png"
+  },
+  {
+    "name": "Suspicious Bush",
+    "image": "images/Suspicious_Bush.png"
+  },
+  {
+    "name": "Goblinstein",
+    "image": "images/Goblinstein.png"
+  },
+  {
+    "name": "Rune Giant",
+    "image": "images/Rune_Giant.png"
+  },
+  {
+    "name": "Berserker",
+    "image": "images/Berserker.png"
+  },
+  {
+    "name": "Boss Bandit",
+    "image": "images/Boss_Bandit.png"
+  },
+  {
+    "name": "Cannon",
+    "image": "images/Cannon.png"
+  },
+  {
+    "name": "Goblin Hut",
+    "image": "images/Goblin_Hut.png"
+  },
+  {
+    "name": "Mortar",
+    "image": "images/Mortar.png"
+  },
+  {
+    "name": "Inferno Tower",
+    "image": "images/Inferno_Tower.png"
+  },
+  {
+    "name": "Bomb Tower",
+    "image": "images/Bomb_Tower.png"
+  },
+  {
+    "name": "Barbarian Hut",
+    "image": "images/Barbarian_Hut.png"
+  },
+  {
+    "name": "Tesla",
+    "image": "images/Tesla.png"
+  },
+  {
+    "name": "Elixir Collector",
+    "image": "images/Elixir_Collector.png"
+  },
+  {
+    "name": "X-Bow",
+    "image": "images/X-Bow.png"
+  },
+  {
+    "name": "Tombstone",
+    "image": "images/Tombstone.png"
+  },
+  {
+    "name": "Furnace",
+    "image": "images/Furnace.png"
+  },
+  {
+    "name": "Goblin Cage",
+    "image": "images/Goblin_Cage.png"
+  },
+  {
+    "name": "Goblin Drill",
+    "image": "images/Goblin_Drill.png"
+  },
+  {
+    "name": "Fireball",
+    "image": "images/Fireball.png"
+  },
+  {
+    "name": "Arrows",
+    "image": "images/Arrows.png"
+  },
+  {
+    "name": "Rage",
+    "image": "images/Rage.png"
+  },
+  {
+    "name": "Rocket",
+    "image": "images/Rocket.png"
+  },
+  {
+    "name": "Goblin Barrel",
+    "image": "images/Goblin_Barrel.png"
+  },
+  {
+    "name": "Freeze",
+    "image": "images/Freeze.png"
+  },
+  {
+    "name": "Mirror",
+    "image": "images/Mirror.png"
+  },
+  {
+    "name": "Lightning",
+    "image": "images/Lightning.png"
+  },
+  {
+    "name": "Zap",
+    "image": "images/Zap.png"
+  },
+  {
+    "name": "Poison",
+    "image": "images/Poison.png"
+  },
+  {
+    "name": "Graveyard",
+    "image": "images/Graveyard.png"
+  },
+  {
+    "name": "The Log",
+    "image": "images/The_Log.png"
+  },
+  {
+    "name": "Tornado",
+    "image": "images/Tornado.png"
+  },
+  {
+    "name": "Clone",
+    "image": "images/Clone.png"
+  },
+  {
+    "name": "Earthquake",
+    "image": "images/Earthquake.png"
+  },
+  {
+    "name": "Barbarian Barrel",
+    "image": "images/Barbarian_Barrel.png"
+  },
+  {
+    "name": "Heal Spirit",
+    "image": "images/Heal_Spirit.png"
+  },
+  {
+    "name": "Giant Snowball",
+    "image": "images/Giant_Snowball.png"
+  },
+  {
+    "name": "Royal Delivery",
+    "image": "images/Royal_Delivery.png"
+  },
+  {
+    "name": "Void",
+    "image": "images/Void.png"
+  },
+  {
+    "name": "Goblin Curse",
+    "image": "images/Goblin_Curse.png"
+  },
+  {
+    "name": "Spirit Empress",
+    "image": "images/Spirit_Empress.png"
+  },
+  {
+    "name": "Vines",
+    "image": "images/Vines.png"
+  }
+]

@@ -1,38 +1,119 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* --- General Layout --- */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: url("./arena.png") no-repeat center center fixed;
+  background-size: cover;
+  color: #fff;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  min-height: 100vh;
 }
 
-.App-link {
-  color: #61dafb;
+/* --- Main Container --- */
+.container {
+  text-align: center;
+  width: 90%;
+  max-width: 420px;
+  background: rgba(0, 0, 0, 0.35);
+  padding: 2rem;
+  border-radius: 18px;
+  backdrop-filter: blur(6px);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* --- Title --- */
+h1 {
+  color: #ffe66d;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+/* --- Main Card Image --- */
+.main-img,
+.card-img {
+  aspect-ratio: 57 / 84;
+  width: 100%;
+  max-width: 250px; /* keeps nice scaling */
+  height: auto;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  object-fit: cover;
+  background: none;
+  display: block;
+  margin: 0 auto 1rem auto;
+}
+
+/* --- Guess Box --- */
+.guess-box {
+  position: relative;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.guess-box input {
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+}
+
+/* --- Dropdown --- */
+.dropdown {
+  position: absolute;
+  top: 105%;
+  left: 0;
+  right: 0;
+  background: #fff;
+  color: #000;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 10;
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.dropdown-item:hover {
+  background: #eee;
+}
+
+/* --- Thumbnail Images in Dropdown --- */
+.dropdown-item img {
+  aspect-ratio: 57 / 84;
+  width: 50px;
+  height: auto;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  object-fit: cover;
+  background: none;
+  border-radius: 6px;
+}
+
+/* --- Buttons --- */
+button {
+  background: #ffe66d;
+  border: none;
+  color: #333;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+button:hover {
+  background: #ffd43b;
 }

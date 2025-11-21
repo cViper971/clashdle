@@ -1,0 +1,44 @@
+.wrong-guesses {
+  margin-top: 1rem;
+  text-align: left;
+  color: #fff;
+}
+
+.wrong-guesses h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1rem;
+  color: #ff6b6b;
+}
+
+.guess-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  max-height: 180px;
+  overflow-y: auto;
+}
+
+.guess-item {
+  width: 84px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 0.4rem;
+}
+
+.guess-item img {
+  aspect-ratio: 84 / 57;
+  width: 100%;
+  height: auto;
+  border: none;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.guess-item p {
+  margin-top: 0.3rem;
+  font-size: 0.8rem;
+  text-align: center;
+}
