@@ -1,44 +1,86 @@
+/* guess.css
+   Rows keep a compact fixed height; thumbnails fill most of the row height.
+   Images won't force the row taller and won't be cropped.
+*/
+
+/* wrapper */
 .wrong-guesses {
   margin-top: 1rem;
   text-align: left;
-  color: #fff;
+  overflow: visible;
 }
 
 .wrong-guesses h3 {
-  margin: 0 0 0.5rem 0;
-  font-size: 1rem;
+  margin: 0 0 0.4rem 0;
+  font-size: 1.05rem;
+  font-weight: 700;
   color: #ff6b6b;
 }
 
+/* list */
 .guess-list {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem;
-  max-height: 180px;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-height: 300px;
   overflow-y: auto;
+  padding-right: 6px;
 }
 
+/* each row: FIXED/COMPACT HEIGHT (does NOT grow) */
 .guess-item {
-  width: 84px;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 8px;
-  padding: 0.4rem;
+  gap: 12px;
+
+  background: rgba(200, 25, 25, 0.85); /* slightly softer solid red */
+  border-radius: 10px;
+  padding: 2px 12px;
+
+  color: #fff;
+  overflow: visible;
+
+  height: 84px;         /* FIXED row height — change if you want taller/shorter rows */
+  box-sizing: border-box;
+}
+
+/* thumbnail container — sized to row height so image fills it */
+.guess-item .thumb {
+  height: 100%;        /* equals the row height minus padding box (box-sizing ensures correct) */
+  width: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
 }
 
 .guess-item img {
-  aspect-ratio: 84 / 57;
-  width: 100%;
-  height: auto;
-  border: none;
-  object-fit: cover;
+  height: calc(100% - 4px);
+  width: auto;
+  aspect-ratio: 57 / 84;
+  object-fit: contain;
   border-radius: 6px;
+  flex-shrink: 0;
+  display: block;
 }
 
+/* name text (vertical center thanks to align-items:center) */
 .guess-item p {
-  margin-top: 0.3rem;
-  font-size: 0.8rem;
-  text-align: center;
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1;
+}
+
+/* responsive tweak for small screens */
+@media (max-width: 420px) {
+  .guess-item {
+    height: 72px;
+    gap: 8px;
+    padding: 6px 10px;
+  }
+  .guess-item img {
+    height: 90%;
+  }
 }

@@ -9,7 +9,8 @@ export default function WrongGuesses({ guesses }) {
       <div className="guess-list">
         {guesses.map((g, i) => (
           <div key={i} className="guess-item">
-            {g}
+            <img src={g.image} alt={g.name} />
+            <p>{g.name}</p>
           </div>
         ))}
       </div>

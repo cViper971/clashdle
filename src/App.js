@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import WrongGuesses from "./Guesses";
+import GameFinished from "./EndPanel";
 
 export default function App() {
   const [cards, setCards] = useState([]);
@@ -8,6 +9,8 @@ export default function App() {
   const [guess, setGuess] = useState("");
   const [showList, setShowList] = useState(false);
   const [wrongGuesses, setWrongGuesses] = useState([]);
+  const [won, setWon] = useState(false);
+  const [totalGuesses, setTotalGuesses] = useState(0);
 
   useEffect(() => {
     fetch("/cards.json")
@@ -20,7 +23,9 @@ export default function App() {
 
   if (!current) return <p>Loading...</p>;
 
-  const filtered = cards.filter(c => c.name.toLowerCase().startsWith(guess.toLowerCase()))
+  const filtered = cards.filter(c =>
+    c.name.toLowerCase().startsWith(guess.toLowerCase())
+  );
 
   function handleGuess(name) {
     setGuess(name);
@@ -28,15 +33,50 @@ export default function App() {
   }
 
   function checkGuess() {
+    if (!guess) return;
+
+    setTotalGuesses(prev => prev + 1);
+
     if (guess.toLowerCase() === current.name.toLowerCase()) {
-      alert("✅ Correct!");
-      const newCard = cards[Math.floor(Math.random() * cards.length)];
-      setCurrent(newCard);
-      setGuess("");
-    } else {
-      setWrongGuesses(prev => [...prev, guess]);
-      setGuess("");
+      setWon(true);
+      return;
     }
+
+    const wrongCard = cards.find(
+      c => c.name.toLowerCase() === guess.toLowerCase()
+    );
+
+    if (wrongCard) {
+      setWrongGuesses(prev => [...prev, wrongCard]);
+      setCards(prev => prev.filter(c => c.name !== wrongCard.name));
+    }
+
+    setGuess("");
+  }
+
+  function restartGame() {
+    fetch("/cards.json")
+      .then(res => res.json())
+      .then(data => {
+        setCards(data);
+        setCurrent(data[Math.floor(Math.random() * data.length)]);
+        setGuess("");
+        setWrongGuesses([]);
+        setShowList(false);
+        setWon(false);
+        setTotalGuesses(0);
+      });
+  }
+
+  if (won) {
+    return (
+      <GameFinished
+        won={won}
+        card={current}
+        guesses={totalGuesses}
+        onRestart={restartGame}
+      />
+    );
   }
 
   return (
@@ -74,7 +114,7 @@ export default function App() {
 
       <button onClick={checkGuess}>Guess</button>
 
-      <WrongGuesses guesses={wrongGuesses} />
+      <WrongGuesses guesses={[...wrongGuesses].reverse()} />
     </div>
   );
 }
