@@ -53,7 +53,7 @@ function SparseImage({ src, totalGuesses }) {
   return (
     <canvas
       ref={canvasRef}
-      style={{ maxWidth: '100%', height: 'auto' }}
+      style={{ width: "70%", height: "auto", display: 'block', margin: '0rem auto 1rem auto' }}
     />
   );
 }
