@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import WrongGuesses from "./Guesses";
 import GameFinished from "./EndPanel";
+import SparseImage from "./SparseImage";
 
 export default function App() {
   const [cards, setCards] = useState([]);
@@ -83,7 +84,7 @@ export default function App() {
     <div className="container">
       <h1>Guess the Clash Royale Card</h1>
 
-      <img className="main-img" src={current.image} alt="mystery card" />
+      <SparseImage src={current.image} totalGuesses={totalGuesses} />
 
       <div className="guess-box">
         <input
