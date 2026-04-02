@@ -1,0 +1,12 @@
+.victories {
+  display: inline-block;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 215, 0, 0.45);
+  border-radius: 999px;
+  padding: 0.25rem 0.85rem;
+  font-size: 0.8rem;
+  color: #ffd700;
+  margin-bottom: 0.75rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35), 0 0 8px rgba(255, 215, 0, 0.08);
+  letter-spacing: 0.02em;
+}

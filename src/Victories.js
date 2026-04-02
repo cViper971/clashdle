@@ -1,3 +1,5 @@
+import "./Victories.css";
+
 export default function Victories({ victories }) {
   return (
     <div className="victories">
