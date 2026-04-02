@@ -1,52 +1,114 @@
+/* --- Base screen --- */
 .finished-screen {
   text-align: center;
   width: 90%;
-  max-width: 450px;
-  background: rgba(10, 10, 20, 0.82);
-  padding: 2rem 2.5rem 2.5rem;
-  border-radius: 24px;
-  backdrop-filter: blur(24px) saturate(160%);
-  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  max-width: 540px;
+  background: rgba(10, 10, 20, 0.88);
+  padding: 2.25rem 2.5rem 2.75rem;
+  border-radius: 28px;
+  backdrop-filter: blur(28px) saturate(170%);
+  -webkit-backdrop-filter: blur(28px) saturate(170%);
+  box-shadow:
+    0 12px 48px rgba(0, 0, 0, 0.6),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
 }
 
+/* --- Win state --- */
 .finished-screen.won {
-  border: 1px solid rgba(100, 220, 100, 0.4);
+  border: 1px solid rgba(255, 215, 0, 0.45);
+  box-shadow:
+    0 12px 48px rgba(0, 0, 0, 0.6),
+    0 0 40px rgba(255, 215, 0, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
 }
 
+/* --- Loss state --- */
 .finished-screen.lost {
-  border: 1px solid rgba(220, 60, 60, 0.4);
+  border: 1px solid rgba(220, 60, 60, 0.3);
+  box-shadow:
+    0 12px 48px rgba(0, 0, 0, 0.6),
+    0 0 30px rgba(200, 30, 30, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
 }
 
-.finished-screen h2 {
-  font-size: 2rem;
+/* --- Win title --- */
+.finished-screen.won h2 {
+  font-size: 2.4rem;
   margin: 0 0 0.5rem;
   color: #ffd700;
-  text-shadow: 0 0 20px rgba(255, 215, 0, 0.35), 0 2px 8px rgba(0, 0, 0, 0.6);
+  text-shadow:
+    0 0 32px rgba(255, 215, 0, 0.55),
+    0 0 12px rgba(255, 215, 0, 0.3),
+    0 2px 6px rgba(0, 0, 0, 0.7);
+  animation: winPulse 2.5s ease-in-out infinite;
 }
 
+@keyframes winPulse {
+  0%, 100% {
+    text-shadow:
+      0 0 32px rgba(255, 215, 0, 0.55),
+      0 0 12px rgba(255, 215, 0, 0.3),
+      0 2px 6px rgba(0, 0, 0, 0.7);
+  }
+  50% {
+    text-shadow:
+      0 0 48px rgba(255, 215, 0, 0.75),
+      0 0 20px rgba(255, 215, 0, 0.45),
+      0 2px 6px rgba(0, 0, 0, 0.7);
+  }
+}
+
+/* --- Loss title --- */
+.finished-screen.lost h2 {
+  font-size: 2rem;
+  margin: 0 0 0.5rem;
+  color: rgba(255, 100, 100, 0.9);
+  text-shadow: 0 0 16px rgba(200, 30, 30, 0.3), 0 2px 6px rgba(0, 0, 0, 0.7);
+}
+
+/* --- Card image --- */
 .finished-img {
-  width: 180px;
+  width: 160px;
   aspect-ratio: 57 / 84;
   object-fit: contain;
-  margin: 1rem auto;
+  margin: 1rem auto 0.75rem;
   display: block;
-  border-radius: 14px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.55);
 }
 
+.finished-screen.won .finished-img {
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.55),
+    0 0 24px rgba(255, 215, 0, 0.25);
+}
+
+/* --- Card name --- */
 .card-name {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   font-weight: 700;
-  margin: 0.25rem 0;
+  margin: 0 0 0.2rem;
   color: #fff;
+  letter-spacing: 0.01em;
 }
 
+/* --- Guess count --- */
 .guess-count {
-  margin: 0.4rem 0 1.25rem;
-  font-size: 1rem;
-  color: rgba(255, 255, 255, 0.65);
+  margin: 0 0 1.5rem;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.55);
+  letter-spacing: 0.02em;
 }
 
 .guess-count strong {
   color: #ffd700;
+  font-size: 1.05rem;
+}
+
+/* --- Restart button --- */
+.restart-btn {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 1.05rem;
+  border-radius: 12px;
 }

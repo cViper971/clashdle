@@ -1,86 +1,86 @@
-/* guess.css
-   Rows keep a compact fixed height; thumbnails fill most of the row height.
-   Images won't force the row taller and won't be cropped.
-*/
-
-/* wrapper */
+/* --- Wrong Guesses wrapper --- */
 .wrong-guesses {
-  margin-top: 1rem;
+  margin-top: 1.25rem;
   text-align: left;
-  overflow: visible;
 }
 
 .wrong-guesses h3 {
-  margin: 0 0 0.4rem 0;
-  font-size: 1.05rem;
+  margin: 0 0 0.5rem 0;
+  font-size: 0.8rem;
   font-weight: 700;
-  color: #ff6b6b;
+  color: rgba(255, 255, 255, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
 }
 
-/* list */
+/* --- List --- */
 .guess-list {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
-  max-height: 300px;
+  gap: 6px;
+  max-height: 280px;
   overflow-y: auto;
-  padding-right: 6px;
+  padding-right: 4px;
 }
 
-/* each row: FIXED/COMPACT HEIGHT (does NOT grow) */
+.guess-list::-webkit-scrollbar { width: 4px; }
+.guess-list::-webkit-scrollbar-track { background: transparent; }
+.guess-list::-webkit-scrollbar-thumb {
+  background: rgba(255, 215, 0, 0.25);
+  border-radius: 4px;
+}
+
+/* --- Each row --- */
 .guess-item {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
 
-  background: rgba(200, 25, 25, 0.85); /* slightly softer solid red */
-  border-radius: 10px;
-  padding: 2px 12px;
+  height: 56px;
+  box-sizing: border-box;
+  padding: 0 12px 0 0;
+
+  background: rgba(200, 30, 30, 0.2);
+  border: 1px solid rgba(220, 60, 60, 0.25);
+  border-left: 3px solid rgba(220, 60, 60, 0.8);
+  border-radius: 8px;
 
   color: #fff;
-  overflow: visible;
+  overflow: hidden;
 
-  height: 84px;         /* FIXED row height — change if you want taller/shorter rows */
-  box-sizing: border-box;
+  animation: guessSlideIn 0.2s ease both;
 }
 
-/* thumbnail container — sized to row height so image fills it */
-.guess-item .thumb {
-  height: 100%;        /* equals the row height minus padding box (box-sizing ensures correct) */
-  width: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
+@keyframes guessSlideIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
+/* --- Card image --- */
 .guess-item img {
-  height: calc(100% - 4px);
+  height: calc(100% - 6px);
   width: auto;
   aspect-ratio: 57 / 84;
   object-fit: contain;
-  border-radius: 6px;
+  border-radius: 4px;
   flex-shrink: 0;
   display: block;
 }
 
-/* name text (vertical center thanks to align-items:center) */
+/* --- Card name --- */
 .guess-item p {
   margin: 0;
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 700;
-  color: #fff;
+  color: rgba(255, 255, 255, 0.9);
   line-height: 1;
+  letter-spacing: 0.01em;
 }
 
-/* responsive tweak for small screens */
-@media (max-width: 420px) {
+/* --- Responsive --- */
+@media (max-width: 480px) {
   .guess-item {
-    height: 72px;
+    height: 48px;
     gap: 8px;
-    padding: 6px 10px;
-  }
-  .guess-item img {
-    height: 90%;
   }
 }

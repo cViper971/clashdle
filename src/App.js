@@ -97,16 +97,19 @@ export default function App() {
       <SparseImage src={current.image} totalGuesses={totalGuesses} />
 
       <div className="guess-box">
-        <input
-          type="text"
-          value={guess}
-          onChange={(e) => {
-            setGuess(e.target.value);
-            setShowList(true);
-          }}
-          placeholder="Type your guess..."
-          onFocus={() => setShowList(true)}
-        />
+        <div className="guess-row">
+          <input
+            type="text"
+            value={guess}
+            onChange={(e) => {
+              setGuess(e.target.value);
+              setShowList(true);
+            }}
+            placeholder="Type your guess..."
+            onFocus={() => setShowList(true)}
+          />
+          <button onClick={checkGuess}>Guess</button>
+        </div>
         {showList && guess && (
           <div className="dropdown">
             {filtered.map(c => (
@@ -122,8 +125,6 @@ export default function App() {
           </div>
         )}
       </div>
-
-      <button onClick={checkGuess}>Guess</button>
 
       <WrongGuesses guesses={[...wrongGuesses].reverse()} />
     </div>
