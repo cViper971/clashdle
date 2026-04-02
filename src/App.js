@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import WrongGuesses from "./Guesses";
+import Victories from "./Victories";
 import GameFinished from "./EndPanel";
 import SparseImage from "./SparseImage";
 
@@ -12,6 +13,7 @@ export default function App() {
   const [wrongGuesses, setWrongGuesses] = useState([]);
   const [won, setWon] = useState(false);
   const [totalGuesses, setTotalGuesses] = useState(0);
+  const [victories, setVictories] = useState(0);
 
   useEffect(() => {
     fetch("/cards.json")
@@ -20,6 +22,9 @@ export default function App() {
         setCards(data);
         setCurrent(data[Math.floor(Math.random() * data.length)]);
       });
+    fetch("http://localhost:3001/api/victories")
+      .then(res => res.json())
+      .then(data => setVictories(data.victories));
   }, []);
 
   if (!current) return <p>Loading...</p>;
@@ -40,6 +45,9 @@ export default function App() {
 
     if (guess.toLowerCase() === current.name.toLowerCase()) {
       setWon(true);
+      fetch("http://localhost:3001/api/victories", { method: "POST" })
+        .then(res => res.json())
+        .then(data => setVictories(data.victories));
       return;
     }
 
@@ -76,12 +84,14 @@ export default function App() {
         card={current}
         guesses={totalGuesses}
         onRestart={restartGame}
+        victories={victories}
       />
     );
   }
 
   return (
     <div className="container">
+      <Victories victories={victories} />
       <h1>Guess the Clash Royale Card</h1>
 
       <SparseImage src={current.image} totalGuesses={totalGuesses} />

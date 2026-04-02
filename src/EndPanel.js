@@ -1,8 +1,10 @@
 import "./EndPanel.css";
+import Victories from "./Victories";
 
-export default function GameFinished({ won, card, guesses, onRestart }) {
+export default function GameFinished({ won, card, guesses, onRestart, victories }) {
   return (
     <div className={`finished-screen ${won ? "won" : "lost"}`}>
+      <Victories victories={victories} />
       <h2>{won ? "🎉 You Won!" : "❌ You Lost"}</h2>
 
       <img src={card.image} alt={card.name} className="finished-img" />
