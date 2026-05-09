@@ -1,4 +1,4 @@
-import "./Guesses.css";
+import "../styles/Guesses.css";
 
 export default function WrongGuesses({ guesses }) {
   if (guesses.length === 0) return null;

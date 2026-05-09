@@ -1,4 +1,4 @@
-import "./EndPanel.css";
+import "../styles/EndPanel.css";
 import Victories from "./Victories";
 
 export default function GameFinished({ won, card, guesses, onRestart, victories }) {

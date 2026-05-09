@@ -1,4 +1,4 @@
-import "./Victories.css";
+import "../styles/Victories.css";
 
 export default function Victories({ victories }) {
   return (
