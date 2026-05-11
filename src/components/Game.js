@@ -22,7 +22,7 @@ export default function Game() {
         setCards(data);
         setCurrent(data[Math.floor(Math.random() * data.length)]);
       });
-    fetch("http://localhost:3001/api/victories")
+    fetch("http://localhost:3001/api/victories", { credentials: "include" })
       .then(res => res.json())
       .then(data => setVictories(data.victories));
   }, []);
@@ -45,7 +45,7 @@ export default function Game() {
 
     if (guess.toLowerCase() === current.name.toLowerCase()) {
       setWon(true);
-      fetch("http://localhost:3001/api/victories", { method: "POST" })
+      fetch("http://localhost:3001/api/victories", { method: "POST", credentials: "include" })
         .then(res => res.json())
         .then(data => setVictories(data.victories));
       return;

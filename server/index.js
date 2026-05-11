@@ -29,6 +29,10 @@ function requireAuth(req, res, next) {
     }
 }
 
+app.get('/api/me', requireAuth, (req, res) => {
+    res.json({ username: req.user.username });
+});
+
 app.get('/api/victories', requireAuth, async (req, res) => {
     const doc = await collection.findOne({});
     res.json({ victories: doc ? doc.count : 0 });
@@ -52,8 +56,8 @@ app.post('/api/register', async (req, res) => {
     const hash = await bcrypt.hash(password, 10);
     const result = await users.insertOne({ username, password: hash });
 
-    const token = jwt.sign({ userId: result.insertedId, username }, process.env.JWT_SECRET);
-    res.cookie('token', token, { httpOnly: true, sameSite: 'lax' });
+    const token = jwt.sign({ userId: result.insertedId, username }, process.env.JWT_SECRET, { expiresIn: '1d' });
+    res.cookie('token', token, { httpOnly: true, sameSite: 'lax', maxAge: 24 * 60 * 60 * 1000 });
     res.json({ username });
 });
 
@@ -66,8 +70,8 @@ app.post('/api/login', async (req, res) => {
     const match = await bcrypt.compare(password, user.password);
     if (!match) return res.status(400).json({ error: 'Invalid username or password' });
 
-    const token = jwt.sign({ userId: user._id, username }, process.env.JWT_SECRET);
-    res.cookie('token', token, { httpOnly: true, sameSite: 'lax' });
+    const token = jwt.sign({ userId: user._id, username }, process.env.JWT_SECRET, { expiresIn: '1d' });
+    res.cookie('token', token, { httpOnly: true, sameSite: 'lax', maxAge: 24 * 60 * 60 * 1000 });
     res.json({ username });
 });
 
