@@ -109,8 +109,10 @@ export default function Game() {
 
   return (
     <div className="container">
-      <UserMenu username={username} />
-      <Victories victories={victories} />
+      <div className="game-header">
+        <UserMenu username={username} />
+        <Victories victories={victories} />
+      </div>
       <h1>Guess the Clash Royale Card</h1>
 
       <SparseImage src={current.image} totalGuesses={totalGuesses} />
