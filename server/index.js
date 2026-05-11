@@ -33,6 +33,11 @@ app.get('/api/me', requireAuth, (req, res) => {
     res.json({ username: req.user.username });
 });
 
+app.post('/api/logout', (req, res) => {
+    res.clearCookie('token');
+    res.json({ ok: true });
+});
+
 app.get('/api/victories', requireAuth, async (req, res) => {
     const doc = await collection.findOne({});
     res.json({ victories: doc ? doc.count : 0 });

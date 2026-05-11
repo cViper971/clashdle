@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "../styles/App.css";
 import WrongGuesses from "./Guesses";
 import Victories from "./Victories";
 import GameFinished from "./EndPanel";
 import SparseImage from "./SparseImage";
+import UserMenu from "./UserMenu";
 
 export default function Game() {
   const [cards, setCards] = useState([]);
@@ -14,6 +16,22 @@ export default function Game() {
   const [won, setWon] = useState(false);
   const [totalGuesses, setTotalGuesses] = useState(0);
   const [victories, setVictories] = useState(0);
+  const [username, setUsername] = useState("");
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    fetch("http://localhost:3001/api/me", { credentials: "include" })
+      .then(res => {
+        if (!res.ok) {
+          navigate("/");
+          return null;
+        }
+        return res.json();
+      })
+      .then(data => {
+        if (data) setUsername(data.username);
+      });
+  }, [navigate]);
 
   useEffect(() => {
     fetch("/cards.json")
@@ -91,6 +109,7 @@ export default function Game() {
 
   return (
     <div className="container">
+      <UserMenu username={username} />
       <Victories victories={victories} />
       <h1>Guess the Clash Royale Card</h1>
 
